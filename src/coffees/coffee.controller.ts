@@ -8,7 +8,6 @@ import {
   Param,
   Patch,
   Post,
-  Query,
 } from '@nestjs/common';
 import { CoffeesService } from './coffees.service.js';
 import { CreateCoffeeDto } from './dto/create-coffee.dto.js';
@@ -19,8 +18,7 @@ export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}
 
   @Get()
-  findAll(@Query() queryParams) {
-    // const { limit, offset } = queryParams;
+  findAll() {
     return this.coffeesService.findAll();
   }
 
